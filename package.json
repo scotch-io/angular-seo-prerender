@@ -5,6 +5,6 @@
   "private": "true",
   "dependencies": {
     "express": "latest",
-    "prerender-node": "latest",
+    "prerender-node": "latest"
   }
 }

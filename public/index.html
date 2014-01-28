@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- We will create a mainController and bind it to HTML which will give us access to the entire DOM -->
+<html ng-app="prerender-tutorial" ng-controller="mainController">
+	<head>
+		<!-- We define the SEO variables we want to dynamically update -->
+		<title>Scotch Tutorial | {{seo.pageTitle}}</title>
+		<meta name="description" content="{{seo.metaDescription}}" />
+
+		<link rel="stylesheet" type="text/css" href="/assets/bootstrap.min.css" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+		<script src="http://code.angularjs.org/1.2.10/angular-route.min.js"></script>
+		<script src='/app.js'></script>
+		<script>
+			// Including this code will ensure that the page is not rendered until all JavaScript has finished executing
+        	window.prerenderReady = false;
+        </script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="bs-example bs-navbar-top-example">
+			      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			        <div class="navbar-header">
+			          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6">
+			            <span class="sr-only">Toggle navigation</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			          </button>
+			          <a class="navbar-brand" href="/">Angular SEO Prerender Tutorial</a>
+			        </div>
+
+			        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+			          <ul class="nav navbar-nav">
+			            <li><a href="/">Home</a></li>
+			            <li><a href="/about">About</a></li>
+			            <li><a href="/features">Features</a></li>
+			          </ul>
+			        </div>
+			      </nav>
+			    </div>
+			</div>
+			<div class="row" style="margin-top: 60px;">
+				<h1 class="text-center">Welcome to the Angular SEO Prerender Tutorial</h1>
+				<div class="col-lg-12">
+					<div ng-view></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
