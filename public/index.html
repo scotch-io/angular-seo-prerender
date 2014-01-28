@@ -1,54 +1,49 @@
 <!doctype html>
 <!-- We will create a mainController and bind it to HTML which will give us access to the entire DOM -->
 <html ng-app="prerender-tutorial" ng-controller="mainController">
-	<head>
-		<!-- Defining a fragment meta tag with the content of '!' will immediatley tell a search engine that this page contains AJAX content that will need to be indexed -->
-		<meta name="fragment" content="!">
-		<!-- We define the SEO variables we want to dynamically update -->
-		<title>Scotch Tutorial | {{seo.pageTitle}}</title>
-		<meta name="description" content="{{seo.metaDescription}}" />
+<head>
 
-		<link rel="stylesheet" type="text/css" href="/assets/bootstrap.min.css" />
+	<!-- We define the SEO variables we want to dynamically update -->
+	<title>Scotch Tutorial | {{ seo.pageTitle }}</title>
+	<meta name="description" content="{{ seo.metaDescription }}">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
-		<script src="http://code.angularjs.org/1.2.10/angular-route.min.js"></script>
-		<script src='/app.js'></script>
-		<script>
-			// Including this code will ensure that the page is not rendered until all JavaScript has finished executing
-        	window.prerenderReady = false;
-        </script>
-	</head>
-	<body>
-		<div class="container">
-			<div class="row">
-				<div class="bs-example bs-navbar-top-example">
-			      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			        <div class="navbar-header">
-			          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6">
-			            <span class="sr-only">Toggle navigation</span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-			          </button>
-			          <a class="navbar-brand" href="/">Angular SEO Prerender Tutorial</a>
-			        </div>
+	<!-- CSS-->
+	<link rel="stylesheet" type="text/css" href="/assets/bootstrap.min.css">
+	<style>
+		body { margin-top:60px; }
+	</style>
 
-			        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-			          <ul class="nav navbar-nav">
-			            <li><a href="/">Home</a></li>
-			            <li><a href="/about">About</a></li>
-			            <li><a href="/features">Features</a></li>
-			          </ul>
-			        </div>
-			      </nav>
-			    </div>
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+	<script src="http://code.angularjs.org/1.2.10/angular-route.min.js"></script>
+	<script src="/app.js"></script>
+	<script>
+		// Including this code will ensure that the page is not rendered until all JavaScript has finished executing
+		window.prerenderReady = false;
+	</script>
+</head>
+<body>
+<div class="container">
+
+	<!-- NAVIGATION BAR -->
+	<div class="bs-example bs-navbar-top-example">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Angular SEO Prerender Tutorial</a>
 			</div>
-			<div class="row" style="margin-top: 60px;">
-				<h1 class="text-center">Welcome to the Angular SEO Prerender Tutorial</h1>
-				<div class="col-lg-12">
-					<div ng-view></div>
-				</div>
-			</div>
-		</div>
-	</body>
+
+			<ul class="nav navbar-nav">
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/features">Features</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<h1 class="text-center">Welcome to the Angular SEO Prerender Tutorial</h1>
+	<!-- where we will inject our template data -->
+	<div ng-view></div>
+
+</div>
+</body>
 </html>
