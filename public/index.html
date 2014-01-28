@@ -2,6 +2,8 @@
 <!-- We will create a mainController and bind it to HTML which will give us access to the entire DOM -->
 <html ng-app="prerender-tutorial" ng-controller="mainController">
 	<head>
+		<!-- Defining a fragment meta tag with the content of '!' will immediatley tell a search engine that this page contains AJAX content that will need to be indexed -->
+		<meta name="fragment" content="!">
 		<!-- We define the SEO variables we want to dynamically update -->
 		<title>Scotch Tutorial | {{seo.pageTitle}}</title>
 		<meta name="description" content="{{seo.metaDescription}}" />
