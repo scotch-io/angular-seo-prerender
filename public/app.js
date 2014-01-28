@@ -35,8 +35,8 @@ function homeController($scope){
 	// For this tutorial, we will simply access the $scope.seo variable from the main controller and fill it with content.
 	// Additionally you can create a service to update the SEO variables - but that's for another tutorial.
 	$scope.$parent.seo = {
-		pageTitle : 'Home',
-		pageDescripton: 'Welcome to our website'
+		pageTitle : 'AngularJS SEO Tutorial',
+		pageDescripton: 'Welcome to our tutorial on getting your AngularJS websites and apps indexed by Google.'
 	}
 }
 
