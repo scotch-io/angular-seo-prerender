@@ -5,6 +5,7 @@
   "private": "true",
   "dependencies": {
     "express": "latest",
+    "path": "^0.12.7",
     "prerender-node": "latest"
   }
 }
