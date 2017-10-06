@@ -1,49 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <!-- We will create a mainController and bind it to HTML which will give us access to the entire DOM -->
-<html ng-app="prerender-tutorial" ng-controller="mainController">
-<head>
+<html ng-app="prerender-tutorial">
+  <head>
 
-	<!-- We define the SEO variables we want to dynamically update -->
-	<title>Scotch Tutorial | {{ seo.pageTitle }}</title>
-	<meta name="description" content="{{ seo.metaDescription }}">
+    <!-- We define the SEO variables we want to dynamically update -->
+    <title>Scotch Tutorial | {{ $root.pageTitle }}</title>
+    <meta name="description" content="{{ $root.metaDescription }}">
 
-	<!-- CSS-->
-	<link rel="stylesheet" type="text/css" href="/assets/bootstrap.min.css">
-	<style>
-		body { margin-top:60px; }
-	</style>
+    <!-- CSS-->
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap.min.css">
+    <style>body { margin-top:60px; }</style>
 
-	<!-- JS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
-	<script src="http://code.angularjs.org/1.2.10/angular-route.min.js"></script>
-	<script src="/app.js"></script>
-	<script>
-		// Including this code will ensure that the page is not rendered until all JavaScript has finished executing
-		window.prerenderReady = false;
-	</script>
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.10/angular-route.min.js"></script>
+    <script src="/app.js"></script>
+    <script>
+       // Including this code will ensure that the page is not rendered until all JavaScript has finished executing
+      window.prerenderReady = false;
+    </script>
 </head>
 <body>
-<div class="container">
+  <div class="container">
 
-	<!-- NAVIGATION BAR -->
-	<div class="bs-example bs-navbar-top-example">
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">Angular SEO Prerender Tutorial</a>
-			</div>
+    <!-- NAVIGATION BAR -->
+    <div class="bs-example bs-navbar-top-example">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Angular SEO Prerender Tutorial</a>
+        </div>
 
-			<ul class="nav navbar-nav">
-				<li><a href="/">Home</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/features">Features</a></li>
-			</ul>
-		</nav>
-	</div>
+        <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/features">Features</a></li>
+        </ul>
+      </nav>
+    </div>
 
-	<h1 class="text-center">Welcome to the Angular SEO Prerender Tutorial</h1>
-	<!-- where we will inject our template data -->
-	<div ng-view></div>
-
-</div>
+    <h1 class="text-center">Welcome to the Angular SEO Prerender Tutorial</h1>
+    <!-- where we will inject our template data -->
+    <div ng-view></div>
+  </div>
 </body>
 </html>
