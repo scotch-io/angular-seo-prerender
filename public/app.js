@@ -38,8 +38,8 @@ angular
       };
 
       $rootScope.$on('$routeChangeSuccess', function(event, current, previous){
-        const route = current.$$route.name || 'base';
-        const pageInfo = pageMeta[route];
+        const route = current.$$route.name;
+        const pageInfo = pageMeta[route] || pageMeta.base;
 
         $rootScope.pageTitle = pageInfo.pageTitle;
         $rootScope.pageDescription = pageInfo.pageDescription;
